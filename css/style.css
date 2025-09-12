@@ -849,6 +849,14 @@ body {
     .footer-inner .footer-col:first-child {
         grid-column: 1;
     }
+    .play-button {
+        width: 70px;
+        height: 70px;
+    }
+    .about-video-player .play-button img {
+        width: 70px;
+        height: 70px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -877,20 +885,73 @@ body {
         margin-bottom: 20px;
         line-height: 120%;
     }
+    .title-lg {
+        font-size: 24px;
+    }
+    .title-hero {
+        font-size: 42px;
+        letter-spacing: -2px;
+    }
+    .text-hero {
+        font-size: 26px;
+    }
+    .about-text {
+        font-size: 16px;
+    }
+    .about-item {
+        gap: 20px;
+        padding: 20px;
+        margin-top: 20px;
+    }
+    .advantages-item .card-title br {
+        display: none;
+    }
     .faq-show-more {
         font-size: 20px;
         line-height: 26px;
         padding: 16px;
     }
+    .steps-tab, .advantages-flex {
+        grid-template-columns: 1fr;
+    }
+    .steps-item {
+        min-height: auto;
+    }
+    .programs-flex {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 639px) {
-
+    .hero-inner {
+        padding-top: 140px;
+        gap: 20px;
+    }
+    .title-hero {
+        font-size: 32px;
+    }
+    .text-hero {
+        font-size: 20px;
+    }
     .faq-accordion {
         max-height: 150px;
     }
     .faq-accordion-head {
         min-height: 150px;
+    }
+    .link-hero {
+        padding: 20px;
+        font-size: 18px;
+    }
+    .steps-tab-button {
+        font-size: 16px;
+        padding: 10px 8px;
+    }
+    .steps-item {
+        padding: 20px 12px;
+    }
+    .steps-item .card-title {
+        margin: 20px 0 12px;
     }
 }
 
