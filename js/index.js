@@ -70,3 +70,11 @@ tabButtons.forEach((button, index) => {
         }
     });
 });
+
+const burgerButton = document.querySelector('.burger-button')
+const burgerMenu = document.querySelector('.header-inner-nav')
+
+burgerButton.addEventListener('click', ()=>{
+    burgerButton.classList.toggle('active')
+    burgerMenu.classList.toggle('active')
+})

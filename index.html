@@ -11,17 +11,22 @@
         <div class="container">
             <div class="header-inner">
                 <div class="header-inner-logos">
-                    <a href="https://dk.sechenov.ru/" class="header-logo-link">
+                    <a href="https://dk.sechenov.ru/" class="header-logo-link mobile-hide">
                         <img src="img/kafedra-logo-icon.svg" alt="Цифровая Кафедра Сеченовского Университета">
                     </a>
                     <a href="https://www.sechenov.ru/" class="header-logo-link">
                         <img src="img/sechenov-logo-icon.svg" alt="Сеченовский Университет">
                     </a>
-                    <a href="https://priority2030.ru/" class="header-logo-link">
+                    <a href="https://priority2030.ru/" class="header-logo-link mobile-hide">
                         <img src="img/prioritet-logo-icon.svg" alt="Приоритет 2030">
                     </a>
                 </div>
+                <button class="burger-button desk-hide">
+                    <img src="img/burger-menu.svg" alt="" width="40" height="40">
+                    <img src="img/close-button.svg" alt="" width="40" height="40">
+                </button>
                 <nav class="header-inner-nav">
+                    <a href="/" class="header-link desk-hide">Главная</a>
                     <a href="#section-faq" class="header-link">Вопрос-ответ</a>
                     <a href="#section-about" class="header-link">О кафедре</a>
                     <a href="#section-steps" class="header-link header-link--bg">Поступление</a>
@@ -117,16 +122,16 @@
                                 </div>
                             </div>
                             <div class="steps-tab">
-                                <div class="steps-item steps-item--action">
+                                <div class="steps-item">
                                     <div class="step-num">ШАГ 1</div>
+                                    <h3 class="card-title">Выберите<br> специальность</h3>
+                                    <p class="step-desc">Ознакомьтесь с перечнем программ и выберите подходящую для обучения.</p>
+                                </div>
+                                <div class="steps-item steps-item--action">
+                                    <div class="step-num">ШАГ 2</div>
                                     <h3 class="card-title">Авторизоваться и подать необходимые документы в ЛКА</h3>
                                     <p class="step-desc">Авторизуйтесь в Личном кабинете абитуриента и подайте заявку на выбранную программу.</p>
                                     <a href="#" class="step-link">Перейти на сайт</a>
-                                </div>
-                                <div class="steps-item">
-                                    <div class="step-num">ШАГ 2</div>
-                                    <h3 class="card-title">Выберите<br> специальность</h3>
-                                    <p class="step-desc">Ознакомьтесь с перечнем программ и выберите подходящую для обучения.</p>
                                 </div>
                                 <div class="steps-item steps-item--action">
                                     <div class="step-num">ШАГ 3</div>
@@ -203,7 +208,7 @@
                 <h2 class="title-base">Наша команда</h2>
             </div>
             <div class="block-bg">
-                <div class="container">
+                <div class="container overflow-container">
                     <div class="team-flex">
                         <div class="team-item">
                             <div class="team-item-image">

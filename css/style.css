@@ -116,7 +116,8 @@ body {
 .step-desc {
     color: var(--color-black);
     font-size: 20px;
-    line-height: 140%;    
+    line-height: 140%;
+    margin-bottom: 20px; 
 }
 
 .about-text {
@@ -177,6 +178,31 @@ body {
     gap: 50px;
     border-radius: 10px;
 }
+.burger-button {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+}
+
+.burger-button img {
+    width: 40px;
+    height: 40px;
+}
+
+.burger-button img:last-child {
+    display: none;
+}
+
+.burger-button.active img:first-child {
+    display: none;
+}
+
+.burger-button.active img:last-child {
+    display: block;
+}
 
 .header-inner-logos {
     display: flex;
@@ -211,7 +237,7 @@ body {
 }
 
 .hero-inner {
-    padding: 406px 0 100px;
+    padding: 400px 0 100px;
     display: flex;
     gap: 40px;
     flex-direction: column;
@@ -234,8 +260,6 @@ body {
 .programs-flex {
     display: flex;
     width: 100%;
-    margin-top: 80px;
-    align-items: center;
     justify-content: space-between;
     gap: 20px;
 }
@@ -249,6 +273,10 @@ body {
     padding: 20px;
     border-radius: 10px;
     border: 1px solid #EBEBEB;
+}
+
+.programs-item .text-base {
+    padding-bottom: 30px;
 }
 
 .programs-item-tags {
@@ -409,11 +437,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: 10px;
 }
 
 .about-video {
     width: 100%;
     max-height: 750px;
+    object-fit: contain;
 }
 
 .play-button {
@@ -427,6 +459,7 @@ body {
     background-color: var(--color-white);
     border-radius: 10px;
     padding: 0;
+    box-shadow: 0 0 0 1200px rgba(31, 44, 77, 0.67);
     border: none;
     transition: transform 220ms ease-in-out, box-shadow 220ms ease-in-out;
 }
@@ -464,7 +497,7 @@ body {
 .team-flex {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 48px;
+    gap: 20px;
 }
 
 .team-item {
@@ -490,11 +523,20 @@ body {
     background-color: var(--color-white);
     border-radius: 10px;
     max-width: 315px;
+    max-height: 295px;
+}
+
+.team-item-info .card-title {
+    max-width: 250px;
+}
+
+.team-item-info .text-base {
+    max-width: 235px;
 }
 
 .projects-flex {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
     justify-content: space-between;
     margin-top: 40px
@@ -513,6 +555,7 @@ body {
     padding: 30px 20px;
     border: 1px solid var(--color-tretiary);
     border-radius: 10px;
+    height: 100%;
 }
 
 .projects-item-video {
@@ -522,17 +565,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 320px;
+    background-color: var(--color-black);
 }
 
 .projects-item-video .play-button {
     width: 70px;
     height: 70px;
     min-width: 70px;
-    box-shadow: 0 0 0 300px rgba(31, 44, 77, 0.44);
 }
 
 .project-video {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .partners-flex {
@@ -692,6 +738,160 @@ body {
     height: 50px;
     min-width: 50px;
     transition: transform 240ms ease-in-out;
+}
+
+.desk-hide {
+    display: none;
+}
+
+@media (max-width: 1599px) {
+    .team-item  {
+        min-width: 510px;
+    }    
+
+    .overflow-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 0 0 20px;
+        scrollbar-color: var(--color-accent) transparent;
+        stroke-width: auto;
+    }
+
+    .section-team .block-bg {
+        padding: 40px 20px 20px;
+    }
+    
+}
+
+@media (max-width: 1535px) {
+    .header-inner-nav {
+        gap: 40px;
+    }
+    .hero-inner {
+        padding: 300px 0 80px;
+    }
+
+    .header-logo-link img {
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 1279px) {
+    .header {
+        top: 0;
+    }
+    .header .container {
+        padding: 0;
+    }
+    .header-inner {
+        border-radius: 0;
+        padding: 20px;
+        height: 96px;
+    }
+    .header-inner-nav {
+        position: fixed;
+        top: 95px;
+        right: 0;
+        width: 360px;
+        display: none;
+        align-items: flex-start;
+        padding: 30px 30px;
+        height: calc(100dvh - 96px);
+        flex-direction: column;
+        background-color: var(--color-darkblue);
+    }
+
+    .header-inner-nav.active {
+        display: flex;
+    }
+
+    .desk-hide {
+        display: block;
+    }
+
+    .steps-tab,
+    .advantages-flex {
+        grid-template-columns: 1fr 1fr;
+    }
+    .projects-flex {
+        grid-template-columns: 1fr;
+    }
+    .projects-item {
+        flex-direction: row;
+    }
+    
+    .footer-inner {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-inner .footer-col:first-child {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 1023px) {
+    .container {
+        padding: 0 20px;
+    }
+    .section-programs, .section-steps, .section-advantages, .section-team {
+        margin-top: 60px;
+    }
+    .title-base {
+        font-size: 48px;
+        letter-spacing: -1.5px;
+        margin-bottom: 30px;
+        line-height: 120%;
+    }
+    .footer-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-inner .footer-col:first-child {
+        grid-column: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    .projects-item {
+        flex-direction: column;
+    }
+    .mobile-hide {
+        display: none;
+    }
+    .header-logo-link img {
+        max-width: 200px;
+    }
+    .hero-inner {
+        padding: 200px 0 50px;
+    }
+    .faq-accordion-head {
+        font-size: 18px;
+        gap: 20px;
+    }
+    .faq-accordion{
+        padding: 0 16px 20px;
+    }
+    .title-base {
+        font-size: 36px;
+        letter-spacing: -1px;
+        margin-bottom: 20px;
+        line-height: 120%;
+    }
+    .faq-show-more {
+        font-size: 20px;
+        line-height: 26px;
+        padding: 16px;
+    }
+}
+
+@media (max-width: 639px) {
+
+    .faq-accordion {
+        max-height: 150px;
+    }
+    .faq-accordion-head {
+        min-height: 150px;
+    }
 }
 
 @media (hover: hover) {    
