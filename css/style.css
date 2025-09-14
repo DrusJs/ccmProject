@@ -1078,6 +1078,9 @@ body {
     .header-inner-nav {
         width: 100%;
     }
+    .section-hero {
+        margin-top: -60px;
+    }
     .title-hero {
         font-size: 32px;
     }
