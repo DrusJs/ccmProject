@@ -50,14 +50,14 @@ body {
 .section-steps,
 .section-advantages,
 .section-team {
-    margin-top: 120px;
+    padding-top: 120px;
 }
 
 .section-about,
 .section-projects,
 .section-partners,
 .section-faq {
-    margin-top: 140px;
+    padding-top: 140px;
 }
 
 .title-hero {
@@ -155,12 +155,19 @@ body {
 }
 
 .header {
-    position: fixed;
+    position: sticky;
     width: 100%;
-    top: 20px;
+    top: 0px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     z-index: 3;
+    transition: background-color 120ms ease-in-out, box-shadow 120ms ease-in-out;
+}
+
+.header.page-scroll {
+    background-color: var(--color-darkblue);
+    box-shadow: 0 -2px 0 2px var(--color-darkblue);
 }
 
 .header .container {
@@ -234,6 +241,7 @@ body {
 
 .section-hero {
     background-image: var(--gradient-main);
+    margin-top: -154px;
 }
 
 .hero-inner {
@@ -312,7 +320,7 @@ body {
     font-family: var(--font-secondary);
     margin-top: auto;
     color: var(--color-black);
-    transition: background-color 240ms ease-in-out;
+    transition: background-color 220ms ease-in-out;
 }
 
 .steps-tab-action {
@@ -534,6 +542,60 @@ body {
     max-width: 235px;
 }
 
+.team-mobile-action {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 12px;
+}
+
+.swipe-pag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.swipe-pag span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    min-width: 10px;
+    border-radius: 10px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-black);
+}
+.swipe-pag span.active {
+    background-color: var(--color-hover);
+    border: 1px solid var(--color-hover);
+}
+
+.swipe-button {
+    display: block;
+    background-color: var(--color-white);
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-black);
+    transition: background-color 220ms ease-in-out, border 220ms ease-in-out;
+}
+
+.swipe-button path {
+    fill: var(--color-black);
+    transition: fill 220ms ease-in-out;
+}
+
+.swipe-button.swipe-button--left {
+    transform: rotate(90deg);
+}
+
+.swipe-button.swipe-button--right {
+    transform: rotate(-90deg);
+}
+
 .projects-flex {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -627,7 +689,7 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
     height: auto;
     max-height: 122px;
     overflow: hidden;
@@ -726,6 +788,7 @@ body {
     color: var(--color-white);
     font-size: 20px;
     font-weight: 500;
+    transition: color 220ms ease-in-out;
 }
 
 .footer-link {
@@ -736,9 +799,12 @@ body {
 
 .footer-link.footer-link--doc {
     color: #5987BE;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+}
+
+.footer-link.footer-link--doc img {
+    position: relative;
+    top: 7px;
+    left: 4px;
 }
 
 .footer-socialmedia {
@@ -752,7 +818,7 @@ body {
     width: 50px;
     height: 50px;
     min-width: 50px;
-    transition: transform 240ms ease-in-out;
+    transition: transform 220ms ease-in-out;
 }
 
 .desk-hide {
@@ -794,6 +860,10 @@ body {
 @media (max-width: 1279px) {
     .header {
         top: 0;
+        margin-top: 0;
+    }
+    .header-logo-link img {
+        max-width: 120px;
     }
     .header .container {
         padding: 0;
@@ -848,8 +918,10 @@ body {
     .container {
         padding: 0 20px;
     }
+    .overflow-container {
+        padding: 0 20px 20px;
+    }
     .section-programs, .section-steps, .section-advantages, .section-team,.section-about, .section-projects, .section-partners, .section-faq {
-        margin-top: 0px;
         padding-top: 70px;
     }
     
@@ -877,6 +949,10 @@ body {
 }
 
 @media (max-width: 767px) {
+    .overflow-container {
+        display: flex;
+        flex-direction: column;
+    }
     .projects-item {
         flex-direction: column;
     }
@@ -943,6 +1019,41 @@ body {
         height: 120px;
     }
 
+    .overflow-container {
+        padding: 2px 20px;
+        overflow: hidden;
+    }
+    .section-team .block-bg {
+        padding: 40px 0 20px;
+    }
+
+    .team-flex {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .team-item {
+        width: calc(100vw - 40px);
+        min-width: calc(100vw - 40px);
+    }
+
+    .team-item-info {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .team-item-info .card-title {
+        max-width: none;
+    }
+    .team-item-info .text-base {
+        max-width: 350px;
+    }
+
+    .team-mobile-action {
+        display: flex;
+    }
+
+    
+
     @keyframes slide-line {
         0% {
             transform: translateX(0);
@@ -950,6 +1061,9 @@ body {
         100% {
             transform: translateX(-1450px);
         }
+    }
+    .card-title {
+        line-height: 120%;
     }
 }
 
@@ -991,6 +1105,23 @@ body {
         margin: 20px 0 12px;
     }
 }
+@media (max-width: 540px)  {
+    .team-item {
+        flex-direction: column;
+    }
+    .team-item-image {
+        width: 100%;
+        max-width: none;
+        display: flex;
+        justify-content: center;
+    }
+    .team-item-info {
+        padding: 20px 20px 30px;
+    }
+    .team-item-image img {
+        max-height: 320px;
+    }
+}
 
 @media (hover: hover) {    
     .header-link:hover {
@@ -1018,6 +1149,13 @@ body {
         background-color: #dde4ff;   
         color: var(--color-black);     
     }
+    .swipe-button:hover {
+        background-color: var(--color-hover);
+        border: 1px solid var(--color-hover);
+    }
+    .swipe-button:hover path {
+        fill: var(--color-white);
+    }
     .step-link:hover {
         background-color: var(--color-active);
         color: var(--color-white);
@@ -1027,8 +1165,7 @@ body {
         text-decoration-skip-ink: none;
     }
     .footer-contanct-info:hover {
-        text-decoration: underline;
-        text-decoration-skip-ink: none;        
+        color: var(--color-hover);      
     }
     .footer-socialmedia-item:hover {
         transform: scale(1.05);

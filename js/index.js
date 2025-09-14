@@ -1,5 +1,4 @@
 function initFaqAccordions() {
-    const faqFlex = document.querySelector('.faq-flex');
     const accordions = document.querySelectorAll('.faq-accordion');
     const showMoreBtn = document.querySelector('.faq-show-more');
     
@@ -54,7 +53,6 @@ document.addEventListener('DOMContentLoaded', initFaqAccordions);
 const tabButtons = document.querySelectorAll('.steps-tab-button');
 const tabs = document.querySelectorAll('.steps-tab');
 
-
 function switchTab(clickedIndex) {
     tabButtons.forEach(button => button.classList.remove('active'));
     tabs.forEach(tab => tab.classList.remove('active'));
@@ -71,6 +69,7 @@ tabButtons.forEach((button, index) => {
     });
 });
 
+
 const burgerButton = document.querySelector('.burger-button')
 const burgerMenu = document.querySelector('.header-inner-nav')
 const headerLinks = document.querySelectorAll('.header-link')
@@ -86,4 +85,87 @@ headerLinks.forEach(el=>{
         burgerMenu.classList.remove('active')
     })
 })
+
+
+let ticking = false;
+
+function scrollEvent() {
+    if (!ticking) {
+        window.requestAnimationFrame(function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('page-scroll');
+            } else {
+                header.classList.remove('page-scroll');
+            }
+            ticking = false;
+        });
+        ticking = true;
+    }
+}
+
+window.addEventListener('scroll', function() {
+    scrollEvent()
+});
+
+scrollEvent()
+
+
+const teamFlex = document.querySelector('.team-flex');
+const teamItems = document.querySelectorAll('.team-item');
+const prevButton = document.querySelector('.swipe-button--left');
+const nextButton = document.querySelector('.swipe-button--right');
+const paginationDots = document.querySelectorAll('.swipe-pag span');
+
+let currentIndex = 0;
+const itemWidth = teamItems[0].offsetWidth;
+const totalItems = teamItems.length;
+
+function updateSliderPosition() {
+    teamFlex.style.transform = `translateX(-${currentIndex * (itemWidth + 20)}px)`;
+    console.log(itemWidth)
+    updatePagination();
+}
+
+function updatePagination() {
+    paginationDots.forEach((dot, index) => {
+        if (index === currentIndex) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+}
+
+nextButton.addEventListener('click', function() {
+    if (currentIndex < totalItems - 1) {
+        currentIndex++;
+        updateSliderPosition();
+    }
+});
+
+prevButton.addEventListener('click', function() {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateSliderPosition();
+    }
+});
+
+paginationDots.forEach((dot, index) => {
+    dot.addEventListener('click', function() {
+        currentIndex = index;
+        updateSliderPosition();
+    });
+});
+
+teamFlex.style.transition = 'transform 0.3s ease-in-out';
+teamFlex.style.display = 'flex';
+teamFlex.style.flexWrap = 'nowrap';
+
+updatePagination();
+
+window.addEventListener('resize', function() {
+    itemWidth = teamItems[0].offsetWidth;
+    updateSliderPosition();
+});
 
