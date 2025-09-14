@@ -1121,6 +1121,12 @@ body {
     .team-item-image img {
         max-height: 320px;
     }
+    .title-lg {
+        font-size: 20px;
+    }
+    .title-base {
+        font-size: 30px;
+    }
 }
 
 @media (hover: hover) {    
