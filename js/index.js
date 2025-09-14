@@ -37,7 +37,11 @@ function initFaqAccordions() {
         
         head.addEventListener('click', () => {
             if (item.classList.contains('active')) {
-                item.style.maxHeight = '122px';
+                    if (window.innerWidth <= 639) {
+                        item.style.maxHeight = '150px';
+                    } else {
+                        item.style.maxHeight = '122px';
+                    }
                 item.classList.remove('active');
             } else {
                 item.classList.add('active');
