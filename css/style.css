@@ -618,6 +618,17 @@ body {
     height: 100%;
 }
 
+.project-item-tag {
+    padding: 5px 8px;
+    background-color: var(--color-tretiary);
+    border-radius: 5px;
+    width: fit-content;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .projects-item-video {
     position: relative;
     overflow: hidden;
@@ -692,6 +703,7 @@ body {
     max-height: 122px;
     overflow: hidden;
     transition: max-height 220ms ease-in-out;
+    will-change: max-height;
 }
 
 .faq-accordion-head {
@@ -884,14 +896,18 @@ body {
         pointer-events: none;
         max-width: 0;
         overflow: hidden;
+        box-shadow: -50vw 0 0 50vw rgba(31, 44, 77, 0.45);
         opacity: 0;
-        transition: 220ms ease-in-out;        
+        transition: max-width 220ms ease-in-out;       
+        z-index: -1; 
     }
 
     .header-inner-nav.active {
-        max-width: 360px;
+        max-width: 340px;
+        width: 100%;
         opacity: 1;
         pointer-events: all;
+        will-change: max-width;
     }
 
     .desk-hide {
@@ -1040,6 +1056,7 @@ body {
 
     .team-flex {
         transition: transform 0.3s ease-in-out;
+        will-change: transform;
     }
 
     .team-item {
@@ -1076,6 +1093,13 @@ body {
     .card-title {
         line-height: 120%;
     }
+    .header-link {
+        font-size: 20px;
+    }
+    .programs-item {
+        min-height: auto;
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 639px) {
@@ -1086,6 +1110,7 @@ body {
 
     .header-inner-nav.active {
         max-width: 100%;
+        width: 100%;
         opacity: 1;
         pointer-events: all;
     }
@@ -1133,7 +1158,9 @@ body {
         padding: 20px 20px 30px;
     }
     .team-item-image img {
-        max-height: 320px;
+        max-height: 400px;
+        width: 100%;
+        object-fit: contain;
     }
     .title-lg {
         font-size: 20px;

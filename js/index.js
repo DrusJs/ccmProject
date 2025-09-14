@@ -122,10 +122,10 @@ const nextButton = document.querySelector('.swipe-button--right');
 const paginationDots = document.querySelectorAll('.swipe-pag span');
 
 let currentIndex = 0;
-const itemWidth = teamItems[0].offsetWidth;
 const totalItems = teamItems.length;
 
 function updateSliderPosition() {
+    const itemWidth = teamItems[0].offsetWidth;
     teamFlex.style.transform = `translateX(-${currentIndex * (itemWidth + 20)}px)`;
     console.log(itemWidth)
     updatePagination();
