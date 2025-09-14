@@ -1130,6 +1130,10 @@ body {
     .title-base {
         font-size: 30px;
     }
+
+    .footer-link {
+        padding-right: 30px;
+    }
 }
 
 @media (hover: hover) {    
