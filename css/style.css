@@ -155,7 +155,7 @@ body {
 }
 
 .header {
-    position: absolute;
+    position: fixed;
     width: 100%;
     top: 20px;
     display: flex;
@@ -581,11 +581,26 @@ body {
     object-fit: cover;
 }
 
+.section-partners .container {
+    display: flex;
+    overflow: hidden;
+}
+
 .partners-flex {
     display: flex;
     align-items: center;
     gap: 20px;
     justify-content: space-between;
+    animation: slide-line 20s linear infinite;
+}
+
+@keyframes slide-line {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-1750px);
+    }
 }
 
 .partners-item {
@@ -786,17 +801,17 @@ body {
     .header-inner {
         border-radius: 0;
         padding: 20px;
-        height: 96px;
+        height: 70px;
     }
     .header-inner-nav {
         position: fixed;
-        top: 95px;
+        top: 70px;
         right: 0;
         width: 360px;
         display: none;
         align-items: flex-start;
         padding: 30px 30px;
-        height: calc(100dvh - 96px);
+        height: calc(100dvh - 40px);
         flex-direction: column;
         background-color: var(--color-darkblue);
     }
@@ -833,9 +848,11 @@ body {
     .container {
         padding: 0 20px;
     }
-    .section-programs, .section-steps, .section-advantages, .section-team {
-        margin-top: 60px;
+    .section-programs, .section-steps, .section-advantages, .section-team,.section-about, .section-projects, .section-partners, .section-faq {
+        margin-top: 0px;
+        padding-top: 70px;
     }
+    
     .title-base {
         font-size: 48px;
         letter-spacing: -1.5px;
@@ -867,7 +884,7 @@ body {
         display: none;
     }
     .header-logo-link img {
-        max-width: 200px;
+        max-width: 180px;
     }
     .hero-inner {
         padding: 200px 0 50px;
@@ -920,12 +937,32 @@ body {
     .programs-flex {
         flex-direction: column;
     }
+
+    .partners-item {
+        width: 270px;
+        height: 120px;
+    }
+
+    @keyframes slide-line {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-1450px);
+        }
+    }
 }
 
 @media (max-width: 639px) {
+    html {
+        scroll-behavior: auto;
+    }
     .hero-inner {
         padding-top: 140px;
         gap: 20px;
+    }
+    .header-inner-nav {
+        width: 100%;
     }
     .title-hero {
         font-size: 32px;

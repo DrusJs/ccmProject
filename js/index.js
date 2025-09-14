@@ -73,8 +73,17 @@ tabButtons.forEach((button, index) => {
 
 const burgerButton = document.querySelector('.burger-button')
 const burgerMenu = document.querySelector('.header-inner-nav')
+const headerLinks = document.querySelectorAll('.header-link')
 
 burgerButton.addEventListener('click', ()=>{
     burgerButton.classList.toggle('active')
     burgerMenu.classList.toggle('active')
 })
+
+headerLinks.forEach(el=>{
+    el.addEventListener('click', ()=>{
+        burgerButton.classList.remove('active')
+        burgerMenu.classList.remove('active')
+    })
+})
+
