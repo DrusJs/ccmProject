@@ -114,7 +114,7 @@ body {
 }
 
 .step-desc {
-    color: var(--color-black);
+    color: var(--color-primary);
     font-size: 20px;
     line-height: 140%;
     margin-bottom: 20px; 
@@ -562,11 +562,9 @@ body {
     min-width: 10px;
     border-radius: 10px;
     background-color: var(--color-white);
-    border: 1px solid var(--color-black);
 }
 .swipe-pag span.active {
-    background-color: var(--color-hover);
-    border: 1px solid var(--color-hover);
+    background-color: #5987BE;
 }
 
 .swipe-button {
@@ -575,12 +573,12 @@ body {
     width: 40px;
     min-width: 40px;
     height: 40px;
-    border-radius: 40px;
+    border-radius: 5px;
     display: flex;
     align-items: center;
+    border: none;
     justify-content: center;
-    border: 1px solid var(--color-black);
-    transition: background-color 220ms ease-in-out, border 220ms ease-in-out;
+    transition: background-color 220ms ease-in-out;
 }
 
 .swipe-button path {
@@ -934,7 +932,7 @@ body {
     .title-base {
         font-size: 48px;
         letter-spacing: -1.5px;
-        margin-bottom: 30px;
+        margin-bottom: 50px;
         line-height: 120%;
     }
     .footer-inner {
@@ -966,7 +964,10 @@ body {
         display: none;
     }
     .header-logo-link img {
-        max-width: 180px;
+        max-width: 120px;
+    }
+    .programs-item .text-base {
+        padding-bottom: 50px;
     }
     .hero-inner {
         padding: 200px 0 50px;
@@ -981,11 +982,15 @@ body {
     .title-base {
         font-size: 36px;
         letter-spacing: -1px;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
         line-height: 120%;
     }
     .title-lg {
         font-size: 24px;
+    }
+    .step-desc {
+        font-size: 16px;
+        margin-bottom: 40px;
     }
     .title-hero {
         font-size: 42px;
@@ -1111,7 +1116,7 @@ body {
         padding: 20px 12px;
     }
     .steps-item .card-title {
-        margin: 20px 0 12px;
+        margin: 20px 0;
     }
 }
 @media (max-width: 540px)  {
@@ -1169,8 +1174,7 @@ body {
         color: var(--color-black);     
     }
     .swipe-button:hover {
-        background-color: var(--color-hover);
-        border: 1px solid var(--color-hover);
+        background-color: var(--color-active);
     }
     .swipe-button:hover path {
         fill: var(--color-white);
