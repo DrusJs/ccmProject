@@ -877,17 +877,23 @@ body {
         position: fixed;
         top: 70px;
         right: 0;
-        width: 360px;
-        display: none;
+        display: flex;
         align-items: flex-start;
         padding: 30px 30px;
         height: calc(100dvh - 40px);
         flex-direction: column;
         background-color: var(--color-darkblue);
+        pointer-events: none;
+        max-width: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: 220ms ease-in-out;        
     }
 
     .header-inner-nav.active {
-        display: flex;
+        max-width: 360px;
+        opacity: 1;
+        pointer-events: all;
     }
 
     .desk-hide {
@@ -1068,15 +1074,15 @@ body {
 }
 
 @media (max-width: 639px) {
-    html {
-        scroll-behavior: auto;
-    }
     .hero-inner {
         padding-top: 140px;
         gap: 20px;
     }
-    .header-inner-nav {
-        width: 100%;
+
+    .header-inner-nav.active {
+        max-width: 100%;
+        opacity: 1;
+        pointer-events: all;
     }
     .section-hero {
         margin-top: -60px;
