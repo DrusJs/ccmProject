@@ -354,16 +354,33 @@ body {
 
 .steps-content {
     margin-top: 40px;
+    position: relative;
 }
 
 .steps-tab {
-    display: none;
+    display: grid;
     gap: 24px;
     grid-template-columns: repeat(4, 1fr);
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.5s ease-in-out;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .steps-tab.active {
-    display: grid;
+    position: relative;
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+    transition: all 0.5s 0.5s ease-in-out;
+}
+
+.steps-tab.leaving {
+    opacity: 0;
+    transform: translateX(-50px);
 }
 
 .steps-item {
@@ -373,7 +390,10 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-height: 400px;
+    min-height: 400px;    
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
 }
 
 .steps-item.steps-item--action {
@@ -542,7 +562,8 @@ body {
     max-width: 235px;
 }
 
-.team-mobile-action {
+.team-mobile-action,
+.projects-mobile-action {
     display: none;
     align-items: center;
     justify-content: space-between;
@@ -835,6 +856,11 @@ body {
     display: none;
 }
 
+.steps-tab.active .steps-item:nth-child(1) { transition-delay: 0.6s; }
+.steps-tab.active .steps-item:nth-child(2) { transition-delay: 0.7s; }
+.steps-tab.active .steps-item:nth-child(3) { transition-delay: 0.8s; }
+.steps-tab.active .steps-item:nth-child(4) { transition-delay: 0.9s; }
+
 @media (max-width: 1599px) {
     .team-item  {
         min-width: 510px;
@@ -973,8 +999,29 @@ body {
         display: flex;
         flex-direction: column;
     }
+    .projects-inner .overflow-container {
+        padding: 0;
+    }
     .projects-item {
         flex-direction: column;
+        min-width: 100%;
+    }
+    .projects-flex::-webkit-scrollbar {
+        display: none;
+    }
+    .projects-flex {
+        display: flex;
+    }
+    .projects-mobile-action .swipe-pag span {
+        background-color: var(--color-tretiary);
+    }
+    .projects-mobile-action .swipe-pag span.active {
+        background-color: #5987BE;
+    }
+    
+    .projects-flex {
+        -ms-overflow-style: none; 
+        scrollbar-width: none;
     }
     .mobile-hide {
         display: none;
@@ -1076,7 +1123,8 @@ body {
         max-width: 350px;
     }
 
-    .team-mobile-action {
+    .team-mobile-action,
+    .projects-mobile-action {
         display: flex;
     }
 

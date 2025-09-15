@@ -206,10 +206,10 @@
             <div class="container">
                 <h2 class="title-base">Наша команда</h2>
             </div>
-            <div class="block-bg">
+            <div class="block-bg js-swiper">
                 <div class="container overflow-container">
-                    <div class="team-flex">
-                        <div class="team-item">
+                    <div class="team-flex js-swiper-container">
+                        <div class="team-item js-swipe-slide">
                             <div class="team-item-image">
                                 <img src="img/team1.png" alt="Лебедев Георгий Станиславович">
                             </div>
@@ -218,7 +218,7 @@
                                 <p class="text-base">Директор Центра Цифровой медицины Сеченовского Университета, доктор технических наук</p>
                             </div>
                         </div>
-                        <div class="team-item">
+                        <div class="team-item js-swipe-slide">
                             <div class="team-item-image">
                                 <img src="img/team2.png" alt="Шадеркин Игорь Аркадьевич">
                             </div>
@@ -227,7 +227,7 @@
                                 <p class="text-base">Руководитель Цифровой кафедры Сеченовского Университета, врач-уролог, кандидат медицинских наук</p>
                             </div>
                         </div>
-                        <div class="team-item">
+                        <div class="team-item js-swipe-slide">
                             <div class="team-item-image">
                                 <img src="img/team3.png" alt="Буркова Ольга Юрьевна">
                             </div>
@@ -259,61 +259,80 @@
         </section>
         <section class="section-projects" id="section-projects">
             <div class="container">
-                <div class="projects-inner">                    
+                <div class="projects-inner js-swiper">                    
                     <h2 class="title-base">Проектная деятельность</h2>
                     <div class="about-item">
                         <h3 class="title-lg">Проектная деятельность - ключевой элемент современной образовательной системы и важный шаг на пути к профессиональному успеху.</h3>
                         <p class="about-text">На Цифровой кафедре реализация проекта - это не только итог учебного процесса или выпускная квалификационная работа, но, в первую очередь, уникальная возможность собрать сильную команду и развить собственную идею от концепции до практической реализации.</p>
                     </div>
-                    <div class="projects-flex">
-                        <div class="projects-item">
-                            <div class="project-item-info">
-                                <h3 class="title-lg">Проектная работа «BioAge»</h3>
-                                <div class="project-item-tag">
-                                    <img src="img/user-icon.svg" alt="">
-                                    Под руководством Елены Нижельской
+                    <div class="overflow-container">
+                        <div class="projects-flex js-swiper-container">
+                            <div class="projects-item js-swipe-slide">
+                                <div class="project-item-info">
+                                    <h3 class="title-lg">Проектная работа «BioAge»</h3>
+                                    <div class="project-item-tag">
+                                        <img src="img/user-icon.svg" alt="">
+                                        Под руководством Елены Нижельской
+                                    </div>
+                                    <p class="text-base">Чат-бот создан для определения биологического возраста, который может помочь пользователю лучше понять свое здоровье, а так же укрепить полезные привычки</p>
                                 </div>
-                                <p class="text-base">Чат-бот создан для определения биологического возраста, который может помочь пользователю лучше понять свое здоровье, а так же укрепить полезные привычки</p>
+                                <div class="projects-item-video">                                
+                                    <img src="img/video-project1.png" class="project-video">
+                                    <button class="play-button">
+                                        <img src="img/video-play.svg" width="35" height="35">
+                                    </button>
+                                </div>
                             </div>
-                            <div class="projects-item-video">                                
-                                <img src="img/video-project1.png" class="project-video">
-                                <button class="play-button">
-                                    <img src="img/video-play.svg" width="35" height="35">
-                                </button>
+                            <div class="projects-item js-swipe-slide">
+                                <div class="project-item-info">
+                                    <h3 class="title-lg">Проектная работа «Radiolink»</h3>
+                                    <div class="project-item-tag">
+                                        <img src="img/user-icon.svg" alt="">
+                                        Под руководством Павла Будникова
+                                    </div>
+                                    <p class="text-base">Чат-бот создан для определения биологического возраста, который может помочь пользователю лучше понять свое здоровье, а так же укрепить полезные привычки</p>
+                                </div>
+                                <div class="projects-item-video">                                
+                                    <img src="img/video-project2.png" class="project-video">
+                                    <button class="play-button">
+                                        <img src="img/video-play.svg" width="35" height="35">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="projects-item js-swipe-slide">
+                                <div class="project-item-info">
+                                    <h3 class="title-lg">Проектная работа «CardioIntegro»</h3>
+                                    <div class="project-item-tag">
+                                        <img src="img/user-icon.svg" alt="">
+                                        Под руководством Дианы Ким
+                                    </div>
+                                    <p class="text-base">Чат-бот создан для определения биологического возраста, который может помочь пользователю лучше понять свое здоровье, а так же укрепить полезные привычки</p>
+                                </div>
+                                <div class="projects-item-video">                                
+                                    <img src="img/video-project3.png" class="project-video">
+                                    <button class="play-button">
+                                        <img src="img/video-play.svg" width="35" height="35">
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        <div class="projects-item">
-                            <div class="project-item-info">
-                                <h3 class="title-lg">Проектная работа «Radiolink»</h3>
-                                <div class="project-item-tag">
-                                    <img src="img/user-icon.svg" alt="">
-                                    Под руководством Павла Будникова
-                                </div>
-                                <p class="text-base">Чат-бот создан для определения биологического возраста, который может помочь пользователю лучше понять свое здоровье, а так же укрепить полезные привычки</p>
-                            </div>
-                            <div class="projects-item-video">                                
-                                <img src="img/video-project2.png" class="project-video">
-                                <button class="play-button">
-                                    <img src="img/video-play.svg" width="35" height="35">
-                                </button>
-                            </div>
+                    </div>
+                    <div class="projects-mobile-action">
+                        <button class="swipe-button swipe-button--left">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.7138 16.7196L19.7048 7.72567C20.0984 7.33102 20.0984 6.69163 19.7048 6.29598C19.3111 5.90134 18.6717 5.90134 18.2781 6.29598L10.0005 14.5765L1.72301 6.29698C1.32936 5.90233 0.689968 5.90233 0.295321 6.29698C-0.0983291 6.69163 -0.0983291 7.33201 0.295321 7.72666L9.28624 16.7206C9.67582 17.1092 10.3253 17.1092 10.7138 16.7196Z" fill="white"/>
+                            </svg>
+                        </button>
+                        <div class="swipe-pag">
+                            <span class="active"></span>
+                            <span></span>
+                            <span></span>
                         </div>
-                        <div class="projects-item">
-                            <div class="project-item-info">
-                                <h3 class="title-lg">Проектная работа «CardioIntegro»</h3>
-                                <div class="project-item-tag">
-                                    <img src="img/user-icon.svg" alt="">
-                                    Под руководством Дианы Ким
-                                </div>
-                                <p class="text-base">Чат-бот создан для определения биологического возраста, который может помочь пользователю лучше понять свое здоровье, а так же укрепить полезные привычки</p>
-                            </div>
-                            <div class="projects-item-video">                                
-                                <img src="img/video-project3.png" class="project-video">
-                                <button class="play-button">
-                                    <img src="img/video-play.svg" width="35" height="35">
-                                </button>
-                            </div>
-                        </div>
+                        <button class="swipe-button swipe-button--right">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.7138 16.7196L19.7048 7.72567C20.0984 7.33102 20.0984 6.69163 19.7048 6.29598C19.3111 5.90134 18.6717 5.90134 18.2781 6.29598L10.0005 14.5765L1.72301 6.29698C1.32936 5.90233 0.689968 5.90233 0.295321 6.29698C-0.0983291 6.69163 -0.0983291 7.33201 0.295321 7.72666L9.28624 16.7206C9.67582 17.1092 10.3253 17.1092 10.7138 16.7196Z" fill="white"/>
+                            </svg>
+                        </button>
                     </div>
                 </div>                
             </div>
