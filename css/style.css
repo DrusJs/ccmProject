@@ -53,6 +53,10 @@ body {
     padding-top: 120px;
 }
 
+.section-steps {
+    overflow: hidden;
+}
+
 .section-about,
 .section-projects,
 .section-partners,
