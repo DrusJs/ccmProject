@@ -2,36 +2,13 @@ function initFaqAccordions() {
     const accordions = document.querySelectorAll('.faq-accordion');
     const showMoreBtn = document.querySelector('.faq-show-more');
     
-    if (accordions.length === 0 || !showMoreBtn) {
-        console.log('FAQ элементы не найдены');
+    if (accordions.length === 0) {
         return;
     }
     
     accordions.forEach((accordion, index) => {
         if (index >= 5) {
             accordion.style.display = 'none';
-        }
-    });
-
-    showMoreBtn.addEventListener('click', () => {
-        const isShowingAll = showMoreBtn.classList.contains('active');
-        
-        if (!isShowingAll) {
-            accordions.forEach((accordion, index) => {
-                if (index >= 5) {
-                    accordion.style.display = 'flex';
-                }
-            });
-            showMoreBtn.classList.add('active');
-            showMoreBtn.textContent = 'СКРЫТЬ ↑'; 
-        } else {
-            accordions.forEach((accordion, index) => {
-                if (index >= 5) {
-                    accordion.style.display = 'none';
-                }
-            });
-            showMoreBtn.classList.remove('active');
-            showMoreBtn.textContent = 'ПОКАЗАТЬ БОЛЬШЕ ↓'; 
         }
     });
     
@@ -58,6 +35,31 @@ function initFaqAccordions() {
                 item.style.maxHeight = item.scrollHeight + 'px';
             }
         });
+    });
+
+    if (!showMoreBtn) {
+        return;
+    }
+    showMoreBtn.addEventListener('click', () => {
+        const isShowingAll = showMoreBtn.classList.contains('active');
+        
+        if (!isShowingAll) {
+            accordions.forEach((accordion, index) => {
+                if (index >= 5) {
+                    accordion.style.display = 'flex';
+                }
+            });
+            showMoreBtn.classList.add('active');
+            showMoreBtn.textContent = 'СКРЫТЬ ↑'; 
+        } else {
+            accordions.forEach((accordion, index) => {
+                if (index >= 5) {
+                    accordion.style.display = 'none';
+                }
+            });
+            showMoreBtn.classList.remove('active');
+            showMoreBtn.textContent = 'ПОКАЗАТЬ БОЛЬШЕ ↓'; 
+        }
     });
 }
 
